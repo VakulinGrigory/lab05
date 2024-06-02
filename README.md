@@ -5,3 +5,4 @@
 2.2. Покрытие кода должно составлять 100%.
 3. Настройте сборочную процедуру на **GitHub Actions**
 4. Настройте Coveralls.io.
+[![Coverage Status](https://coveralls.io/repos/github/VakulinGrigory/lab05/badge.svg?branch=main)](https://coveralls.io/github/VakulinGrigory/lab05?branch=main)

@@ -5,12 +5,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(banking_app)
 
+# Добавляем путь к модулям CMake для поддержки покрытия кода (codecov)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/third-party/CMake-codecov/cmake" ${CMAKE_MODULE_PATH})
+# Добавляем директорию banking в список директорий для поиска заголовочных файлов.
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/banking)
+# Добавляем поддиректорию banking для сборки.
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/banking)
 
 if (BUILD_TESTS)
+  # Добавляем поддиректорию third-party/gtest, содержащую Google Test
   add_subdirectory(third-party/gtest)
+  # Включаем поддержку тестирования в проекте
   enable_testing()
   include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
   include_directories(${gmock_SOURCE_DIR}/include ${gmock_SOURCE_DIR})  
